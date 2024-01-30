@@ -7,7 +7,6 @@
 #include <QKeyEvent>
 #include <QTime>
 #include <random>
-#include <QCoreApplication>
 
 Snake::Snake(QWidget *parent) : QWidget(parent) {
 
@@ -17,20 +16,19 @@ Snake::Snake(QWidget *parent) : QWidget(parent) {
 }
 
 void Snake::loadGameImages() {
-    QString basePath = QCoreApplication::applicationDirPath() + "/../resources/";
-    if (head.load(basePath + "head.png")) {
+    if (head.load(":/resources/head.png")) {
         setImageSize(Head);
     }
-    if (apple.load(basePath + "apple.png")) {
+    if (apple.load(":/resources/apple.png")) {
         setImageSize(Apple);
     }
-    if (bodyPart.load(basePath + "body.png")) {
+    if (bodyPart.load(":/resources/body.png")) {
         setImageSize(Body);
     }
-    if (bomb.load(basePath + "bomb.png")) {
+    if (bomb.load(":/resources/bomb.png")) {
         setImageSize(Bomb);
     }
-    if (wall.load(basePath + "wall.png")) {
+    if (wall.load(":/resources/wall.png")) {
         setImageSize(Wall);
     }
 }

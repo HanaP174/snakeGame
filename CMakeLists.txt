@@ -6,7 +6,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "C:/Qt/6.6.1/mingw_64/lib/cmake")
+# for clion only
+#set(CMAKE_PREFIX_PATH "C:/Qt/6.6.1/mingw_64/lib/cmake")
 
 find_package(Qt6 COMPONENTS
         Core
@@ -14,7 +15,9 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(snakeGame main.cpp playground/SnakePlayground.cpp playground/SnakePlayground.h playground/SnakePlayground.ui snake/Snake.cpp snake/Snake.h)
+add_executable(snakeGame main.cpp playground/SnakePlayground.cpp playground/SnakePlayground.h playground/SnakePlayground.ui snake/Snake.cpp snake/Snake.h
+    resources/apple.png Resources.qrc)
+
 target_link_libraries(snakeGame
         Qt::Core
         Qt::Gui
